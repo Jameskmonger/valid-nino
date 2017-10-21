@@ -12,6 +12,8 @@ export class ValidNinoTests {
     @TestCase("NT")
     @TestCase("TN")
     @TestCase("ZZ")
+    @TestCase("ABC")
+    @TestCase("XYZ")
     public shouldReturnFalseForFullBadPrefix(prefix: string) {
         const value = `${prefix}111111A`;
         const result = validNino(value);
