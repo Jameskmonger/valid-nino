@@ -4,7 +4,8 @@
   "description": "Validate a UK National Insurance number",
   "main": "index.js",
   "scripts": {
-    "test": "alsatian test.js"
+    "test": "alsatian test.js",
+    "build": "tsc"
   },
   "keywords": [
     "uk",
