@@ -90,4 +90,28 @@ export class ValidNinoTests {
         Expect(result).toBe(true);
     }
 
+    @TestCase("12345")
+    @TestCase("AB123C")
+    @TestCase("X12283738291C")
+    @TestCase("AB12345678C")
+    @TestCase("OP OP")
+    @TestCase("15!")
+    @TestCase(null)
+    @TestCase(undefined)
+    public shouldReturnFalseForBadValue(value: string) {
+        const result = validNino(value);
+
+        Expect(result).toBe(false);
+    }
+
+    @TestCase("AB123456C")
+    @TestCase("TX999999D")
+    @TestCase("NB010101 ")
+    @TestCase("LM938322B")
+    public shouldReturnTrueForGoodValue(value: string) {
+        const result = validNino(value);
+        
+        Expect(result).toBe(true);
+    }
+
 }
