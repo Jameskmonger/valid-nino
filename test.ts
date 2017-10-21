@@ -67,6 +67,9 @@ export class ValidNinoTests {
     @TestCase("L")
     @TestCase("0")
     @TestCase("J")
+    @TestCase("AA")
+    @TestCase("AB")
+    @TestCase("ABCD")
     public shouldReturnFalseForBadSuffix(suffix: string) {
         const value = `AB111111${suffix}`;
         const result = validNino(value);
