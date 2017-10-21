@@ -46,4 +46,17 @@ export class ValidNinoTests {
         Expect(result).toBe(false);
     }
 
+    @TestCase("AB")
+    @TestCase("XY")
+    @TestCase("CE")
+    @TestCase("NY")
+    @TestCase("OX")
+    @TestCase("ZA")
+    public shouldReturnTrueForValidPrefix(prefix: string) {
+        const value = `${prefix}111111A`;
+        const result = validNino(value);
+
+        Expect(result).toBe(true);
+    }
+
 }
