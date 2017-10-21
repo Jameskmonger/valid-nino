@@ -69,7 +69,7 @@ export class ValidNinoTests {
         const value = `AB111111${suffix}`;
         const result = validNino(value);
 
-        Expect(result).toBe(true);
+        Expect(result).toBe(false);
     }
 
     @TestCase("A")
