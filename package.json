@@ -5,7 +5,7 @@
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "test": "alsatian test.js",
+    "test": "npm run build && alsatian test.js",
     "build": "tsc"
   },
   "files": [
