@@ -1,4 +1,4 @@
-import { TestFixture, TestCase, Expect } from "alsatian";
+import { TestFixture, TestCase, Test, Expect } from "alsatian";
 
 import validNino from "./index";
 
@@ -56,6 +56,37 @@ export class ValidNinoTests {
         const value = `${prefix}111111A`;
         const result = validNino(value);
 
+        Expect(result).toBe(true);
+    }
+
+    @TestCase("E")
+    @TestCase("X")
+    @TestCase("5")
+    @TestCase("L")
+    @TestCase("0")
+    @TestCase("J")
+    public shouldReturnFalseForBadSuffix(suffix: string) {
+        const value = `AB111111${suffix}`;
+        const result = validNino(value);
+
+        Expect(result).toBe(true);
+    }
+
+    @TestCase("A")
+    @TestCase("B")
+    @TestCase("C")
+    @TestCase("D")
+    public shouldReturnTrueForValidSuffix(suffix: string) {
+        const value = `AB111111${suffix}`;
+        const result = validNino(value);
+
+        Expect(result).toBe(true);
+    }
+
+    @Test()
+    public shouldReturnTrueForSuffixSpace() {
+        const result = validNino(`AB111111 `);
+        
         Expect(result).toBe(true);
     }
 
