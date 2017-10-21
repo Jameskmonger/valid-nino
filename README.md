@@ -1,6 +1,6 @@
 # valid-nino
 
-Validate a UK National Insurance number.
+Validate a UK National Insurance number. Unit tested with [alsatian](https://github.com/alsatian-test/alsatian).
 
 ## Installation
 
